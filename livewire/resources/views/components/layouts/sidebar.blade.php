@@ -2,7 +2,7 @@
       <div class="page-body-wrapper">
         <!-- Page Sidebar Start-->
         <div class="sidebar-wrapper" data-layout="stroke-svg">
-          <div class="logo-wrapper"><a href="#"><img class="img-fluid" src="bhttps://tourradar.pro/assets/uploads/img/new_logo.png" alt=""></a>
+          <div class="logo-wrapper"><a href="#"><img class="img-fluid" src="/assets/uploads/img/new_logo.png" alt=""></a>
             <div class="back-btn"><i class="fa fa-angle-left"> </i></div>
             <div class="toggle-sidebar"><i class="status_toggle middle sidebar-toggle" data-feather="grid"> </i></div>
           </div>
