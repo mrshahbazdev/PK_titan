@@ -13,7 +13,7 @@ class TestUserSeeder extends Seeder
         // ── System Settings ──
         DB::table('systemsettings')->insertOrIgnore([
             'id' => 1,
-            'siteTitle' => 'PK Titan',
+            'siteTitle' => 'Expedia Travels',
             'siteLogo' => '',
             'siteUrl' => 'http://localhost:8000',
             'minWithdrawal' => 100,
