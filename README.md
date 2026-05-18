@@ -12,7 +12,8 @@ A full-stack web application for travel services, agent management, and customer
 
 - [Project Structure](#project-structure)
 - [Requirements](#requirements)
-- [Getting Started](#getting-started)
+- [Quick Start (Laravel Only)](#quick-start-laravel-only)
+- [Getting Started (Full Project)](#getting-started-full-project)
   - [1. Clone the Repository](#1-clone-the-repository)
   - [2. CodeIgniter Setup (Main App)](#2-codeigniter-setup-main-app)
   - [3. Livewire Admin Panel Setup](#3-livewire-admin-panel-setup)
@@ -85,7 +86,58 @@ PK_titan/
 
 ---
 
-## Getting Started
+## Quick Start (Laravel Only)
+
+If you only need the **Laravel backend** (API + Admin panel), run these commands:
+
+```bash
+# 1. Clone the repo
+git clone https://github.com/mrshahbazdev/PK_titan.git
+cd PK_titan/laravel
+
+# 2. Install PHP dependencies
+composer install
+
+# 3. Setup environment
+cp .env.example .env
+php artisan key:generate
+
+# 4. Configure database in .env
+# Edit .env and set your DB credentials:
+#   DB_CONNECTION=mysql
+#   DB_HOST=127.0.0.1
+#   DB_DATABASE=pkproject
+#   DB_USERNAME=root
+#   DB_PASSWORD=your_password
+
+# 5. Run migrations and seed demo data
+php artisan migrate
+php artisan db:seed
+
+# 6. Install Node dependencies and build frontend
+npm install
+npm run build
+
+# 7. Start the server
+php artisan serve
+```
+
+Open `http://localhost:8000` in your browser.
+
+**Demo Credentials:**
+
+| Role | Username | Password |
+|------|----------|----------|
+| Admin | `admin` | `admin123` |
+| Member | `testuser` | `test123` |
+
+**API:** `http://localhost:8000/api/products`
+
+> For the full project setup (CodeIgniter + Livewire + Laravel), see below.
+
+---
+
+## Getting Started (Full Project)
 
 ### 1. Clone the Repository
 
