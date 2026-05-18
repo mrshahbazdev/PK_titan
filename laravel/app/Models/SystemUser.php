@@ -2,15 +2,16 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Model;
+use Illuminate\Foundation\Auth\User as Authenticatable;
+use Illuminate\Notifications\Notifiable;
 
-class SystemUser extends Model
+class SystemUser extends Authenticatable
 {
-    protected $table = 'systemuser';
-    public $timestamps = false;
+    use Notifiable;
+
+    protected $table = 'systemusers';
 
     protected $fillable = [
-        'userName', 'password', 'roleName', 'memberManagement', 'systemManagement',
-        'transactionManagement', 'shoppingMallManagement', 'status'
+        'username', 'password', 'role',
     ];
 }
