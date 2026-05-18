@@ -1,5 +1,5 @@
 <html lang="en" class="resp ah-atomic-page"><head>
-    <title>TourRadar - Book Tours &amp; Travel Packages</title>
+    <title>Expedia Travels - Book Tours &amp; Travel Packages</title>
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=5">
     <meta name="description" content="With more than 50,000 tours and over 2 million departures worldwide. Find the right tour and get the best price. Guaranteed.">
     <meta name="robots" content="index, follow">
@@ -8,8 +8,8 @@
     <base href="<?php echo base_url(); ?>">
     <link rel="shortcut icon" href="assets/favicon.ico">
     <meta property="og:url" content="<?php echo base_url(); ?>">
-    <meta property="og:title" content="Adventure Begins Here - TourRadar">
-    <meta property="og:description" content="TourRadar is the world's most trusted online marketplace for multi-day tours. Compare, read reviews, meet guides &amp; travelers, book with confidence.">
+    <meta property="og:title" content="Adventure Begins Here - Expedia Travels">
+    <meta property="og:description" content="Expedia Travels is the world's most trusted online marketplace for multi-day tours. Compare, read reviews, meet guides &amp; travelers, book with confidence.">
     <meta property="og:type" content="website">
     <link rel="modulepreload" as="script" crossorigin="" href="assets/layout.b5f6c65d.js"><link rel="stylesheet" href="assets/layout.323f08e7.css">
     <link rel="modulepreload" as="script" crossorigin="" href="assets/notice-icon.d521a667.js">
@@ -60,8 +60,8 @@
     <link rel="manifest" href="/manifest.v1720792993.json">
     <link rel="mask-icon" href="//cdn.tourradar.com/images/v1720792993/fav/safari-pinned-tab.svg" color="#461a3e">
     <meta name="msapplication-TileColor" content="#461a3e">
-    <meta name="apple-mobile-web-app-title" content="TourRadar">
-    <meta name="application-name" content="TourRadar">
+    <meta name="apple-mobile-web-app-title" content="Expedia Travels">
+    <meta name="application-name" content="Expedia Travels">
     <meta name="msapplication-config" content="/browserconfig.xml">
     
     <script type="text/javascript" integrity="sha384-brZSC96hYm3PQoDW01j9feI8ZrI3C0LCfqBawkfolqNQ43gMNKB2svxqXMnLzTrk" crossorigin="anonymous" async="" src="https://cdn.amplitude.com/libs/analytics-browser-gtm-2.8.0-min.js.gz"></script><script type="text/javascript" integrity="sha384-brZSC96hYm3PQoDW01j9feI8ZrI3C0LCfqBawkfolqNQ43gMNKB2svxqXMnLzTrk" crossorigin="anonymous" async="" src="https://cdn.amplitude.com/libs/analytics-browser-gtm-2.8.0-min.js.gz"></script><script async="" src="https://tags.creativecdn.com/slZWnbj63tHSK3tN62sY.js"></script>
@@ -151,7 +151,7 @@
 	</style>
       <div class="logo" data-cy="common-header--logo">
             <svg xmlns="http://www.w3.org/2000/svg" width="177" height="29.5" viewBox="-2.4 199.9 201 33.5" fill="#461a3e">
-              <title>tourradar.com</title>
+              <title>Expedia Travels</title>
               <path d="M24 206.3c-7.6 0-11.2 3-11.2 7.7v11.5c0 4.7 3.6 7.8 11.3 7.8 7.8 0 11.4-3 11.4-7.8V214c0-4.7-3.6-7.7-11.3-7.7zm4.6 18.6c0 2-1.5 2.8-4.5 2.8-2.8 0-4.4-1-4.4-3v-10.2c0-2 1.5-2.8 4.5-2.8s4.6 1 4.6 2.8V225zm146.7-15v-3.3h-6.8v26h7V216c1-1 3.6-2.8 7.4-3h1.3v-6.7H183c-3.8 0-6.3 2.3-7.7 3.8zm-20.4-3.7c-7.6 0-10.7 3-10.7 7.6v1.4h6.4V214c0-1.7 1-2.5 4-2.5s4 1 4 3v3.3h-7.3c-5.2 0-8 3-8 6.6v2.4c0 3.5 2.5 6.6 7.7 6.6 3.8 0 6.3-1.6 8-3v2.6h6.4V214c0-4.8-2.8-7.7-10.5-7.7zm3.7 19.3c-1.2 1-3.4 2.3-5.8 2.3-1.7 0-2.7-.6-2.7-2v-1c0-1.3.5-2.3 2.5-2.3h6v3zM4.7 200h-7v25c0 5.2 2.3 7.8 10 7.8h2.8V227H8.8c-3 0-4.2-.8-4.2-2.7V213h6.2v-6.5H4.6V200zm75 13v-6.7h-1.4c-3.8 0-6.3 2.3-7.7 3.8v-3.3h-6.8v26h7V216c1-1 3.6-2.8 7.4-3h1.5zM54 225c-1 .8-3.2 2.3-5.8 2.3-2.2 0-2.8-1-2.8-2.8v-17.8h-7v19.5c0 4 3 7 7.7 7 4.3 0 6.8-1.7 8.2-3v2.6H61v-26h-7V225zm79.7-16c-1.5-1.2-4-2.7-8-2.7-5.3 0-7.7 3-7.7 7.7v11.6c0 4.7 2.4 7.7 7.6 7.7 4.2 0 7-1.8 8.3-3v2.6h6.6v-33h-7v9zm0 16c-1 .7-3.4 2.3-6 2.3s-2.8-1.4-2.8-2.8V215c0-1.4.3-2.7 2.8-2.7 2.6 0 5 1.6 6 2.4V225zM188 207.5h1.6v4.2h1v-4.2h1.7v-.8H188M197.2 206.7l-1.3 3.6-1.4-3.6H193v5h1v-4l1.5 4h.8l1.4-4v4h1v-5"></path>
               <path d="M104.4 206.3c-7.5 0-10.6 3-10.6 7.6v1.4h6.4V214c0-1.7 1-2.5 4-2.5s4 1 4 3v3.3h-7.3c-5.3 0-8 3-8 6.6v2.4c0 3.5 2.4 6.6 7.6 6.6 3.7 0 6.2-1.6 7.8-3v2.6h6.5v-19c0-5-3-7.7-10.6-7.7zm3.8 19.2c-1.2 1-3.4 2.3-5.8 2.3-1.6 0-2.6-.5-2.6-2v-.8c0-1.4.5-2.4 2.5-2.4h6v3zM83 210v6h-1.5c-2.3.2-4.2 1-5.5 1.6v15h7V216c1-1 3.6-2.8 7.4-3h1.4v-6.7h-1.4c-3.6 0-6 2.2-7.5 3.6z"></path>
             </svg>
