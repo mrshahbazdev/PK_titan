@@ -22,6 +22,9 @@ A full-stack web application for travel services, agent management, and customer
 - [Project Architecture](#project-architecture)
 - [Routes (CodeIgniter)](#routes-codeigniter)
 - [Admin Panel Features (Livewire)](#admin-panel-features-livewire)
+- [Database Seeding (Demo Data)](#database-seeding-demo-data)
+- [Product API](#product-api)
+- [Shared Hosting Deployment](#shared-hosting-deployment)
 - [Assets & Branding](#assets--branding)
 - [Troubleshooting](#troubleshooting)
 
@@ -261,11 +264,14 @@ DB_CONNECTION=sqlite
 php artisan key:generate
 ```
 
-#### f) Run Migrations
+#### f) Run Migrations & Seed Demo Data
 
 ```bash
 php artisan migrate
+php artisan db:seed
 ```
+
+This creates demo admin, demo user, products, and categories. See [Database Seeding](#database-seeding-demo-data) for credentials.
 
 #### g) Build Frontend Assets
 
@@ -439,6 +445,307 @@ The main application follows the MVC pattern:
 | `/systems/get_users_data/(:num)` | `Systems` | Get users data |
 | `/systems/changeStatusUser/(:num)` | `Systems` | Change user status |
 | `/systems/get_support_data/(:num)` | `Systems` | Get support data |
+
+---
+
+## Database Seeding (Demo Data)
+
+The project includes seeders to populate the database with demo users, products, and system settings.
+
+### Run Seeders
+
+```bash
+# Laravel backend (from laravel/ directory)
+cd laravel
+php artisan db:seed
+
+# Livewire admin panel (from livewire/ directory)
+cd livewire
+php artisan db:seed
+```
+
+### Demo Login Credentials
+
+#### Laravel Backend (Main App)
+
+| Role | Username | Password | Notes |
+|------|----------|----------|-------|
+| **Admin** | `admin` | `admin123` | Full admin access (Super Admin role) |
+| **Member** | `testuser` | `test123` | Frontend member with balance of 1000 |
+
+#### Livewire Admin Panel
+
+| Role | Email | Password |
+|------|-------|----------|
+| **Admin** | `admin@expediatravels.com` | `admin123` |
+| **User** | `user@expediatravels.com` | `user123` |
+
+### Demo Products (8 travel products seeded)
+
+| Product | Category | Price (PKR) |
+|---------|----------|-------------|
+| Dubai City Tour - 5 Days | Tour Packages | 45,000 |
+| Istanbul Heritage Tour - 7 Days | Tour Packages | 65,000 |
+| Maldives Beach Resort - 4 Nights | Hotel Bookings | 120,000 |
+| Lahore to Dubai - Round Trip | Flight Tickets | 55,000 |
+| Baku Azerbaijan Tour - 4 Days | Tour Packages | 38,000 |
+| Thailand Phuket Package - 5 Days | Tour Packages | 75,000 |
+| Dubai Airport Car Rental - Daily | Car Rentals | 8,000 |
+| Mediterranean Cruise - 7 Nights | Cruise Packages | 250,000 |
+
+### Demo Categories
+
+- Tour Packages
+- Hotel Bookings
+- Flight Tickets
+- Car Rentals
+- Cruise Packages
+
+---
+
+## Product API
+
+The Laravel backend exposes a REST API for managing products. All API endpoints are prefixed with `/api`.
+
+### Base URL
+
+```
+http://your-domain.com/api
+```
+
+### Endpoints
+
+#### List All Products
+
+```http
+GET /api/products
+```
+
+Optional query parameters:
+- `category` - Filter by category name
+- `status` - Filter by status (0 or 1)
+
+**Example:**
+```bash
+curl http://your-domain.com/api/products
+curl http://your-domain.com/api/products?category=Tour+Packages
+```
+
+**Response:**
+```json
+{
+  "success": true,
+  "data": [
+    {
+      "id": 1,
+      "productName": "Dubai City Tour - 5 Days",
+      "productPrice": "45000.00",
+      "productImage": "",
+      "productCategory": "Tour Packages",
+      "productDescription": "5-day all-inclusive Dubai city tour...",
+      "status": 1
+    }
+  ]
+}
+```
+
+#### Get Single Product
+
+```http
+GET /api/products/{id}
+```
+
+**Example:**
+```bash
+curl http://your-domain.com/api/products/1
+```
+
+#### Create Product
+
+```http
+POST /api/products
+Content-Type: application/json
+```
+
+**Body:**
+```json
+{
+  "productName": "Paris City Tour - 6 Days",
+  "productPrice": 95000,
+  "productImage": "https://example.com/paris.jpg",
+  "productCategory": "Tour Packages",
+  "productDescription": "6-day Paris tour with Eiffel Tower, Louvre, and Seine cruise.",
+  "status": 1
+}
+```
+
+**Example:**
+```bash
+curl -X POST http://your-domain.com/api/products \
+  -H "Content-Type: application/json" \
+  -d '{"productName":"Paris City Tour","productPrice":95000,"productCategory":"Tour Packages"}'
+```
+
+**Response (201):**
+```json
+{
+  "success": true,
+  "message": "Product created successfully",
+  "data": { ... }
+}
+```
+
+#### Update Product
+
+```http
+PUT /api/products/{id}
+Content-Type: application/json
+```
+
+**Example:**
+```bash
+curl -X PUT http://your-domain.com/api/products/1 \
+  -H "Content-Type: application/json" \
+  -d '{"productPrice":50000}'
+```
+
+#### Delete Product
+
+```http
+DELETE /api/products/{id}
+```
+
+**Example:**
+```bash
+curl -X DELETE http://your-domain.com/api/products/1
+```
+
+#### List Categories
+
+```http
+GET /api/categories
+```
+
+#### Create Category
+
+```http
+POST /api/categories
+Content-Type: application/json
+```
+
+**Body:**
+```json
+{
+  "categoryName": "Adventure Sports",
+  "status": 1
+}
+```
+
+---
+
+## Shared Hosting Deployment
+
+Follow these steps to deploy the project on shared hosting (e.g., cPanel, Hostinger, Bluehost).
+
+### Step 1: Upload Files
+
+Upload the entire project to your hosting's `public_html/` directory (or a subdomain folder).
+
+```
+public_html/
+├── application/
+├── assets/
+├── laravel/
+├── livewire/
+├── system/
+├── .htaccess          (included - handles routing)
+├── .env
+├── index.php
+└── ...
+```
+
+### Step 2: Create MySQL Database
+
+In cPanel:
+1. Go to **MySQL Databases**
+2. Create database: `pkproject`
+3. Create a database user and assign it to the database with **All Privileges**
+
+### Step 3: Configure Environment Files
+
+**Root `.env`:**
+```env
+DB_HOST=localhost
+DB_USERNAME=cpanel_user_dbuser
+DB_PASSWORD=your_db_password
+DB_DATABASE=cpanel_user_pkproject
+SITE_URL=https://yourdomain.com/
+```
+
+**`laravel/.env`:**
+```env
+APP_NAME="Expedia Travels"
+APP_ENV=production
+APP_DEBUG=false
+APP_URL=https://yourdomain.com
+
+DB_CONNECTION=mysql
+DB_HOST=localhost
+DB_PORT=3306
+DB_DATABASE=cpanel_user_pkproject
+DB_USERNAME=cpanel_user_dbuser
+DB_PASSWORD=your_db_password
+```
+
+### Step 4: Install Dependencies via SSH (or locally)
+
+If your hosting supports SSH:
+
+```bash
+# Root CodeIgniter
+composer install --no-dev
+
+# Laravel backend
+cd laravel
+composer install --no-dev
+php artisan key:generate
+php artisan migrate --force
+php artisan db:seed --force
+npm install && npm run build
+
+# Livewire admin
+cd ../livewire
+composer install --no-dev
+php artisan key:generate
+php artisan migrate --force
+php artisan db:seed --force
+```
+
+If SSH is not available, run these commands locally, then upload the `vendor/` and `node_modules/` directories along with the built assets.
+
+### Step 5: Set Permissions
+
+```bash
+chmod -R 775 laravel/storage laravel/bootstrap/cache
+chmod -R 775 livewire/storage livewire/bootstrap/cache
+```
+
+### Step 6: Verify .htaccess
+
+The `.htaccess` file in the root handles:
+- CodeIgniter URL rewriting (removes `index.php`)
+- API routing to Laravel (`/api/*`)
+- Admin panel routing (`/admin`, `/livewire`, etc.)
+- Security headers and sensitive file protection
+- PHP settings (upload size, memory limit)
+
+Make sure **mod_rewrite** is enabled on your hosting.
+
+### Step 7: Test
+
+1. Visit `https://yourdomain.com` - Should show Expedia Travels homepage
+2. Visit `https://yourdomain.com/admin` - Should show admin login
+3. Test API: `curl https://yourdomain.com/api/products`
 
 ---
 
