@@ -1,0 +1,10 @@
+member leve commissionRate float
+
+adminsidemenu
+
+change trade with this
+{"withdraw":"Withdrawal list","recharge":"recharge list"}
+
+memberlevel database update need
+
+memberlevel
