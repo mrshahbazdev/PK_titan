@@ -90,8 +90,9 @@ class JsubmissionController extends Controller
             return view('front.jsubmission', $data);
         }
 
-        $balance = $data['user']->balance;
-        $product = Product::where('productPrice', '<', $balance)
+        $memberLevelData = MemberLevel::where('level', $data['user']->memberLevel)->first();
+        $levelPrice = $memberLevelData->minimumBalanceLimit ?? 0;
+        $product = Product::where('productPrice', '<=', $levelPrice)
             ->inRandomOrder()
             ->first();
 
