@@ -67,9 +67,8 @@ class Jsubmission extends CI_Controller
                                 $data["pendingProduts"] = $pendingProduct;
                                 $this->load->view("front/jsubmission", $data);
                             } else {
-                                $balanace = $data["user"]->balance;
                                 $data["rewards"] = $this->usermodel->getProduct(
-                                    $balanace
+                                    $mylevel->minimumBalanceLimit
                                 );
                                 if ($data["rewards"] !== null) {
                                         
@@ -147,9 +146,8 @@ class Jsubmission extends CI_Controller
                             $data["pendingProduts"] = $pendingProduct;
                             $this->load->view("front/jsubmission", $data);
                         } else {
-                            $balanace = $data["user"]->balance;
                             $data["rewards"] = $this->usermodel->getProduct(
-                                $balanace
+                                $mylevel->minimumBalanceLimit
                             );
                             if ($data["rewards"] !== null) {
                                     
